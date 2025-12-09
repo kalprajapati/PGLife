@@ -1,0 +1,4 @@
+{"admin@example.com":{"name":"Admin User","password":"$2y$10$4.VJe6wnRJ5YSeG.EGoDf.VXS\/DlnTwaJ96hyeCVf\/8ext\/pfFEmO","id":1},
+"kalp123@gmail.cpm":{"name":"Kalp Prajapati","password":"$2y$10$fxZBod6Mz1ANo8iudG080uW0DJwSrycgzqMcPuvUKDN1kcRr1j0ua","id":2},
+"bhavesh123@gmail.com":{"name":"Bhavesh Varotariya","password":"$2y$10$vFNhlYnfR\/kE0orBsD5s5unZpmnXgQvHFZ\/GjHs78t3A0mxTk\/TRC","id":3}
+}

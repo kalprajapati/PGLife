@@ -1,0 +1,819 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Simplified Navbar (Clean, Minimal Design) */
+.navbar {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    box-shadow: 0 2px 10px rgba(0, 123, 255, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 0.75rem 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1rem;
+}
+
+.nav-logo {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-logo:hover {
+    color: #e0e0e0;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav-links a, .nav-links span {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.nav-links a:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.user-welcome {
+    color: #ffd700;
+    font-weight: 600;
+    padding: 0.5rem;
+}
+/* Fixed Search Bar (Better Centering and Icon) */
+.search-bar {
+    display: flex;
+    flex: 1;
+    max-width: 500px;  /* Slightly wider for better UX */
+    background: white;
+    border-radius: 50px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    margin: 0 1rem;  /* Centers it in nav */
+}
+
+.search-bar:focus-within {
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
+}
+
+.search-input {
+    flex: 1;
+    border: none;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    outline: none;
+    background: transparent;
+    min-width: 200px;  /* Ensures space on small screens */
+}
+
+.search-input::placeholder {
+    color: #999;
+    opacity: 0.8;
+}
+
+.search-btn {
+    background: white;
+    border: none;
+  
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 50px;  /* Fixed width for consistency */
+}
+
+.search-btn:hover {
+    background: rgb(237, 237, 237);
+    transform: translateX(2px);  /* Subtle slide effect */
+}
+
+.search-icon {
+    font-size: 1.1rem;  /* Magnifying glass emoji */
+}
+
+/* Mobile Search Bar (Full Width, Stacked if Needed) */
+@media (max-width: 768px) {
+    .search-bar {
+        max-width: none;
+        width: 100%;
+        margin: 0;
+        border-radius: 20px;
+    }
+    
+    .search-input {
+        min-width: auto;
+        padding: 0.7rem;
+    }
+    
+    .search-btn {
+        padding: 0.7rem 1rem;
+        min-width: auto;
+        flex-shrink: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .search-input {
+        font-size: 0.95rem;
+    }
+    
+    .search-btn {
+        font-size: 0.95rem;
+    }
+}
+
+/* Mobile Navbar (Stacks Cleanly) */
+@media (max-width: 768px) {
+    .nav-container {
+
+        flex-direction: flex-start;
+        gap: 0.75rem;
+    }
+    
+    .search-bar {
+        display : none;
+    }
+    
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+    
+    .nav-links a, .nav-links span {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-logo {
+        font-size: 1.4rem;
+    }
+    
+    .search-input {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.95rem;
+    }
+    
+    .search-btn {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.95rem;
+    }
+}
+
+/* Main Content */
+main {
+    padding: 2rem 0;
+    animation: fadeIn 0.6s ease-out;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #0056b3;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+/* Hero Section (Home Landing) */
+.hero {
+    background: linear-gradient(135deg, rgba(0, 123, 255, 0.1) 0%, rgba(0, 86, 179, 0.1) 100%);
+    padding: 3rem 0;
+    text-align: center;
+    border-radius: 16px;
+    margin-bottom: 2rem;
+}
+
+.hero h1 {
+    color: #007bff;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+.stats {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.cta-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    color: white;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.3);
+}
+
+/* Forms (Login, Signup, Booking - Non-Search Forms) */
+form:not(.search-bar) {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+form:not(.search-bar) h3 {
+    color: #007bff;
+    margin-bottom: 1rem;
+}
+
+form:not(.search-bar) label {
+    display: block;
+    margin: 1rem 0 0.5rem;
+    font-weight: 600;
+    color: #555;
+}
+
+form:not(.search-bar) input, form:not(.search-bar) select {
+    width: 100%;
+    max-width: 250px;
+    padding: 0.75rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: #f8f9fa;
+}
+
+form:not(.search-bar) input:focus, form:not(.search-bar) select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+    background: white;
+    transform: translateY(-2px);
+}
+
+form:not(.search-bar) button {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    max-width: 200px;
+    margin-top: 1rem;
+}
+
+form:not(.search-bar) button:hover {
+    background: linear-gradient(135deg, #0056b3 0%, #004085 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.3);
+}
+
+#bookingForm {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border: 1px solid #dee2e6;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+    font-weight: normal;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: auto;
+    margin-right: 0.5rem;
+    transform: scale(1.2);
+}
+
+/* Listings and Cards */
+#results, #all-pgs {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.listings, .featured {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.pg-card {
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.pg-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #007bff, #28a745);
+}
+
+.pg-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 123, 255, 0.2);
+}
+
+.pg-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.pg-card:hover img {
+    transform: scale(1.05);
+}
+
+.pg-card h4 {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.pg-card h4 a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 1.3rem;
+    transition: color 0.3s ease;
+}
+
+.pg-card h4 a:hover {
+    color: #0056b3;
+}
+
+.pg-card p {
+    margin: 0.75rem 0;
+    color: #666;
+}
+
+.price-tag {
+    display: inline-block;
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+    margin: 0.5rem 0;
+}
+
+.type-tag {
+    background: #6c757d;
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    margin-left: 0.5rem;
+}
+
+/* PG Details Page */
+.pg-detail {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    background: white;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.pg-detail img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+.pg-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;  /* Crops to fit without distortion */
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+  
+
+.pg-detail .info {
+    padding: 1rem 0;
+}
+
+.pg-detail ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.pg-detail li {
+    background: #f8f9fa;
+    margin: 0.5rem 0;
+    padding: 0.75rem;
+    border-radius: 8px;
+    border-left: 4px solid #007bff;
+    transition: background 0.3s ease;
+}
+
+.pg-detail li:hover {
+    background: #e9ecef;
+}
+
+/* Amenities List in PG Cards (for pgs.php and details) */
+.amenities-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0.5rem 0 0;
+}
+
+.amenities-list li {
+    background: #f8f9fa;
+    margin: 0.25rem 0;
+    padding: 0.5rem;
+    border-radius: 6px;
+    border-left: 3px solid #28a745;
+    font-size: 0.95rem;
+    color: #555;
+    transition: background 0.3s ease;
+}
+
+.amenities-list li:hover {
+    background: #e9ecef;
+}
+
+.amenities-list li a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.amenities-list li a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
+/* Text Center Utility */
+.text-center {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* Messages (Success/Error) */
+.success, .error {
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    animation: slideIn 0.5s ease-out;
+}
+
+.success {
+    background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.error {
+    background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.success a, .error a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.success a:hover, .error a:hover {
+    text-decoration: underline;
+}
+
+/* Buttons and Links */
+.back-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #6c757d 0%, #5a6268 100%);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 8px;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    background: linear-gradient(135deg, #5a6268 0%, #495057 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(108, 117, 125, 0.3);
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(135deg, #333 0%, #222 100%);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+footer p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Responsive Design (General) */
+@media (max-width: 768px) {
+    .pg-detail {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+    }
+    
+    form:not(.search-bar) input, form:not(.search-bar) select {
+        max-width: 100%;
+    }
+    
+    .listings, .featured {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .pg-card {
+        padding: 1rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 2rem;
+    }
+    
+    form:not(.search-bar) {
+        padding: 1rem;
+    }
+    
+    .hero {
+        padding: 2rem 0;
+    }
+}
+
+/* Enhanced Login & Signup Form Styles */
+form.login-form,
+form.signup-form {
+    background: linear-gradient(135deg, #f8fbff 0%, #e9f2fb 100%);
+    padding: 2.5rem 2rem 2rem 2rem;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(0, 123, 255, 0.10), 0 2px 8px rgba(40, 167, 69, 0.06);
+    max-width: 420px;
+    margin: 2.5rem auto 2rem auto;
+    border: 1.5px solid #e3eafc;
+    animation: fadeInDown 0.7s;
+    position: relative;
+    display : flex;
+    flex-direction : column;
+    align-items: center;
+    justify-content: center;
+}
+
+form.login-form::before,
+form.signup-form::before {
+    content: '';
+    position: absolute;
+    top: -32px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 68px;
+    height: 68px;
+    background: linear-gradient(135deg, #007bff 60%, #28a745 100%);
+    border-radius: 50%;
+    box-shadow: 0 4px 18px rgba(0, 123, 255, 0.10);
+    z-index: 1;
+}
+
+form.login-form h3,
+form.signup-form h3 {
+    color: #007bff;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    position: relative;
+    z-index: 2;
+}
+
+form.login-form label,
+form.signup-form label {
+    display: block;
+    margin: 1.2rem 0 0.5rem 0.2rem;
+    font-weight: 600;
+    color: #0056b3;
+    letter-spacing: 0.01em;
+}
+
+form.login-form input,
+form.signup-form input,
+form.login-form select,
+form.signup-form select {
+    width: 100%;
+    padding: 0.85rem 1.1rem;
+    border: 1.5px solid #cbe2fc;
+    border-radius: 10px;
+    font-size: 1.07rem;
+    background: #f5f8fa;
+    margin-bottom: 0.3rem;
+    transition: border 0.2s, box-shadow 0.2s, background 0.2s;
+    color: #222;
+}
+
+form.login-form input:focus,
+form.signup-form input:focus,
+form.login-form select:focus,
+form.signup-form select:focus {
+    border-color: #007bff;
+    background: #e9f2fb;
+    box-shadow: 0 0 0 2px #b3d7ff;
+    outline: none;
+}
+
+form.login-form button,
+form.signup-form button {
+    width: 100%;
+    background: linear-gradient(135deg, #007bff 0%, #28a745 100%);
+    color: #fff;
+    border: none;
+    padding: 0.95rem 0;
+    border-radius: 10px;
+    font-size: 1.13rem;
+    font-weight: 700;
+    margin-top: 1.5rem;
+    box-shadow: 0 2px 12px rgba(0, 123, 255, 0.10);
+    cursor: pointer;
+    letter-spacing: 0.03em;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+form.login-form button:hover,
+form.signup-form button:hover {
+    background: linear-gradient(135deg, #28a745 0%, #007bff 100%);
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 6px 24px rgba(40, 167, 69, 0.13);
+}
+
+form.login-form .form-footer,
+form.signup-form .form-footer {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    color: #555;
+}
+
+form.login-form .form-footer a,
+form.signup-form .form-footer a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 0.3rem;
+    transition: color 0.2s;
+}
+
+form.login-form .form-footer a:hover,
+form.signup-form .form-footer a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Add subtle input icon (optional, if you use icons in HTML) */
+.form-input-icon {
+    position: relative;
+}
+.form-input-icon input {
+    padding-left: 2.2rem;
+}
+.form-input-icon .icon {
+    position: absolute;
+    left: 0.7rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #007bff;
+    font-size: 1.1rem;
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+/* Responsive for mobile */
+@media (max-width: 600px) {
+    form.login-form,
+    form.signup-form {
+        padding: 1.3rem 0.7rem 1rem 0.7rem;
+        border-radius: 12px;
+        max-width: 98vw;
+    }
+    form.login-form h3,
+    form.signup-form h3 {
+        font-size: 1.3rem;
+    }
+    form.login-form::before,
+    form.signup-form::before {
+        width: 48px;
+        height: 48px;
+        top: -22px;
+    }
+}
